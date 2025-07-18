@@ -9,39 +9,45 @@
 </head>
 <body>
   <header class="hero hidden">
+    <label class="toggle-switch">
+  <input type="checkbox" id="mode-toggle" />
+  <span class="slider"></span>
+</label>
+
      <!-- Orbiting container -->
-  <div class="orbit-container">
-    <div class="particle p1"></div>
-    <div class="particle p2"></div>
-    <div class="particle p3"></div>
+  <div class="orbit-container" aria-hidden="true"></div>
+
+    <div class="particle p1" aria-hidden="true" style="animation: flicker 2.1s infinite ease-in-out;"></div>
+    <div class="particle p2" aria-hidden="true" style="animation: pulse 3s infinite ease-in-out;"></div>
+    <div class="particle p3" aria-hidden="true" style="animation: flicker 2.7s infinite;"></div>
   </div>
 <div class="orbit-container orbit-layer-2">
-  <div class="particle p4"></div>
-  <div class="particle p5"></div>
-  <div class="particle p6"></div>
+  <div class="particle p4" aria-hidden="true"></div>
+  <div class="particle p5" aria-hidden="true"></div>
+  <div class="particle p6" aria-hidden="true"></div>
 </div>
 
-    <div class="accretion-disk"></div>
+    <div class="accretion-disk" aria-hidden="true"></div>
     <!-- Div that will will spin behind header content. -->
-     <div class="blackhole-bg"></div>
+     <div class="blackhole-bg" aria-hidden="true"></div>
     <h1>Black Holes</h1>
-    <p class="header-p">A Journey for Curious Minds</p>
+    <p class="header-p gradient-text">A Journey for Curious Minds</p>
     <a href="#register" class="cta-btn">Register Now</a>
   </header>
 
   <section class="info hidden">
-    <h2>Event Overview</h2>
+    <h2 class="gradient-text">Event Overview</h2>
     <p>Saturday, August 25 4:00 - 7:00 PM</p>
      <p>Excited journey to a Black Holes. Fun & educational for the whole family at Brithish Sciance Museum!</p>
    
   </section>
   <section class="overview hidden">
-     <h2>What is a Black Hole?</h2>
+     <h2 class="gradient-text">What is a Black Hole?</h2>
     <p>Explore the invisible wonders where gravity rules and time slows down. Discover the misterious regions of space where gravity is so strong that not even light can escape. </p>
   </section>
 
   <section class="activities hidden">
-    <h2>Event Highlights</h2>
+    <h2 class="gradient-text">Event Highlights</h2>
     <div class="container-lists">
       <div class="box"><img src="./media/9035telescope_icon.png" alt="telescope icon"/>
         <p>Telescope viewing.</p>
@@ -52,16 +58,34 @@
       <div class="box"><img src="./media/1rocket_launch_icon.png" alt="rocket icon"/>
         <p>Questions and answers.</p><p class="p-style">Interactive workshops for families</p></div>
 </div>
+
+
     </div>
   </section>
+  <section class="gallery hidden">
+  <h2 class="gradient-text">Workshop galery</h2>
+  <div class="gallery-grid">
+     <div class="image-wrapper">
+
+    <img src="https://images.unsplash.com/photo-1638787149948-af8b874e7952?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGNoaWxkcmVuJTIwM2QlMjBibGFjayUyMGhvbGVzJTIwb2JzZXJ2aW5nfGVufDB8fDB8fHww" alt="Black hole panel" />
+    </div>
+    <div class="image-wrapper">
+
+    <img src="https://images.unsplash.com/photo-1696642575540-bb5e38a10031?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Workshop moment" />
+    </div>
+     <div class="image-wrapper">
+<img src=" https://images.unsplash.com/photo-1650429333422-e17d39a58e60?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGNoaWxkcmVuJTIwM2QlMjBibGFjayUyMGhvbGVzJTIwb2JzZXJ2aW5nfGVufDB8fDB8fHwwalt="Orbital Q&A />
+     </div>    
+  </div>
+</section>
 
   <section class="access hidden">
-    <h2>Family & Accessibility</h2>
+    <h2 class="gradient-text">Family & Accessibility</h2>
     <p>We welcome all explorers—ramps, quiet zones, and child-friendly facilities included.</p>
   </section>
 
   <section class="register hidden" id="register">
-    <h2>RSVP Now</h2>
+    <h2 class="gradient-text">RSVP Now</h2>
     <p>Free tickets available until Sept 30</p>
     <a href="#" class="cta-btn">Save My Seat</a>
   </section>
