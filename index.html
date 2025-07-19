@@ -32,7 +32,7 @@
      <div class="blackhole-bg" aria-hidden="true"></div>
     <h1>Black Holes</h1>
     <p class="header-p gradient-text">A Journey for Curious Minds</p>
-    <a href="#register" class="cta-btn">Register Now</a>
+    <a class="register-btn cta-btn">Register Now</a>
   </header>
 
   <section class="info hidden">
@@ -93,7 +93,49 @@
   <footer>
     <p>© 2025 Cosmic Events | Designed by Petya</p>
   </footer>
+<!-- Modal Registration Form -->
+<div class="modal" id="registration-modal" inert>
+  <div class="modal-content">
+    <button class="close-btn">&times;</button>
+    <h2 class="gradient-text">Register for the Stargazing Event</h2>
+    <form class="form-container">
+     <form class="form-container" id="event-form">
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    required
+    aria-label="Name"
+  />
 
+  <input
+    type="email"
+    name="email"
+    placeholder="Email Address"
+    required
+    aria-label="Email"
+  />
+
+  <input
+    type="text"
+    name="affiliation"
+    placeholder="Affiliation or Group (optional)"
+    aria-label="Affiliation"
+  />
+
+  <textarea
+    name="message"
+    placeholder="What excites you about the event?"
+    rows="4"
+    aria-label="Message"
+  ></textarea>
+
+  <button type="submit">Join the Journey</button>
+</form>
+
+    </form>
+  </div>
+</div>
  <script src="./spript.js"></script>
 
 </body>
