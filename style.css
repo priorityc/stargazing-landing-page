@@ -1,282 +1,6 @@
 /* Reset & Base */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(#2c346f, #0b034e);
-  color: #fff;
-  scroll-behavior: smooth;
-}
+/* Orange color: rgb(255, 106, 0); */
 
-section, header {
-  max-width: 900px;
-  margin: 5rem auto;
-  padding: 2rem;
-  text-align: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
-}
-.overview {
-   background: #2a0e4e;
-}
-/* The black hole styling */
-.hero {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
- background-size: cover;
- position: relative;
-  overflow: hidden;
-  text-align: center;
-  padding: 6rem 2rem;
-  background: linear-gradient(135deg, #0b0f1a, #1a1f30);
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: inherit; /* mirrors the background */
-  filter: blur(6px);
-  z-index: 0;
-}
-
-.blackhole-bg,
-.accretion-disk,
-.orbit-container,
-.hero h1,
-.hero p,
-.cta-btn {
-  position: relative;
-  z-index: 1;
-}
-.header-p {
-  text-transform: uppercase;
-  letter-spacing: 5px;
-}
-
-
-.blackhole-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  /* Creates a dark center with a glow around it */
-  background: radial-gradient(circle at center, #000 40%, transparent 70%);
-  border: 8px solid rgba(255, 255, 255, 0.1);
-  border-top-color: #a85dfb; /* Give a spin illusion */
-  animation: spin 6s linear infinite;
-  z-index: 0; /* Push it behind header content */
-  box-shadow: 0 0 50px rgba(168, 93, 251, 0.5);
-  opacity: 0.4;
-  filter: blur(2px);
-}
-
-.accretion-disk {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  height: 400px;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 12px solid transparent;
-  border-top: 12px solid rgba(255, 174, 0, 0.6); /* glowing matter */
-  border-bottom: 12px solid rgba(160, 50, 230, 0.4); /* deeper dust color */
-  animation: spinDisk 12s linear infinite;
-  z-index: 1;
-  filter: blur(5px);
-}
-  .orbit-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 800px;
-  height: 800px;
-  transform: translate(-50%, -50%);
-  animation: rotateDisk 10s linear infinite;
-  z-index: 0;
-}
-/* Inner orbit layer (fast, closer material) */
-.orbit-layer-1 {
-  width: 280px;
-  height: 280px;
-  animation: rotateFast 8s linear infinite;
-  z-index: 0;
-}
-
-/* Outer orbit layer (slower, cooler gas) */
-.orbit-layer-2 {
-  width: 360px;
-  height: 360px;
-  animation: rotateSlow 16s linear infinite;
-  z-index: -1;
-}
-
-
-/* Shared particle style */
-.particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px;
-}
-
-
-/* Hot, glowing orange particles (closer in) */
-.p1, .p2, .p3 {
-  background: #ff9900;
-  box-shadow: 0 0 8px #ff9900;
-}
-.p1 { top: 10%; left: 50%; }
-.p2 { top: 50%; left: 5%; }
-.p3 { top: 85%; left: 60%; }
-
-/* Cooler purple/blue particles (further out) */
-.p4, .p5, .p6 {
-  background: #5f99ff;
-  box-shadow: 0 0 8px #5f99ff;
-}
-.p4 { top: 15%; left: 70%; }
-.p5 { top: 60%; left: 20%; }
-.p6 { top: 90%; left: 50%; }
-
-@keyframes flicker {
-  0%, 100% { opacity: 1; }
-  20% { opacity: 0.7; }
-  40% { opacity: 0.9; }
-  60% { opacity: 0.4; }
-  80% { opacity: 0.8; }
-}
-
-.particle {
-  animation: flicker 2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 8px;
-  }
-  50% {
-    transform: scale(1.3);
-    box-shadow: 0 0 15px;
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 8px;
-  }
-}
-
-.particle {
-  animation: pulse 3s infinite ease-in-out;
-}
-@keyframes rotateFast {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes rotateSlow {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(-360deg); } /* counter-rotation */
-}
-
-/* Rotation keyframe */
-@keyframes rotateDisk {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-
-/* Spin the disk */
-@keyframes spinDisk {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-
-
-/* Spin Animation-Rotates the div infinitely */
-@keyframes spin {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.cta-btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background: #512f77;
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  transition:  0.3s ease;
-  text-decoration: upercase;
-  letter-spacing: 1px;
-}
-.cta-btn:hover {
-  background: #512f77;
-}
-
-/* Scroll Animation */
-.hidden {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Activities  */
-.activities {
-  background: linear-gradient(135deg, #0b0f1a, #1a1f30);
-  color: #ffffff;
-  padding: 4rem 2rem;
-}
-
-.container-lists {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* three equal columns */
-  gap: 2rem;
-  padding: 2rem;
-  align-items: center;
-}
-
-
-.box {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: #2a0e4e;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
-}
-.p-style {
-  color: #a85dfb;
-  
-}
-
-.box:hover {
-  transform: translateY(-5px);
-}
-
-.box img {
-  max-width: 80px;
-  margin-bottom: 1rem;
-}
 .register {
       background: #2a0e4e;
 }
@@ -286,13 +10,23 @@ h1 {
 }
 /* fradient text */
 .gradient-text {
-  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  /* background: linear-gradient(45deg, #ff6ec4, #7873f5); */
+  background: linear-gradient(45deg, #ffd66e, #7873f5);;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   animation: shimmer 3s linear infinite;
 }
-
+.icons {
+  display: flex;
+  justify-content: center;
+ 
+}
+.icon {
+  width: 48px;
+  height: 48px;
+  color: rgb(255, 106, 0);
+}
 /* light mode */
 .toggle-switch {
   position: fixed;
@@ -582,17 +316,13 @@ body:has(#mode-toggle:checked) {
   pointer-events: none;
 }
 /* Responsive */
-@media (max-width: 600px) {
-  h1 {
-     font-size: 2.2rem; 
-    }
-  h2 { 
-    font-size: 1.5rem; 
-  }
+
  @media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
   }
+
+ 
 
   .container-lists {
     grid-template-columns: 1fr 1fr;
@@ -609,9 +339,10 @@ body:has(#mode-toggle:checked) {
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 2rem;
-  }
+ .hero h1 {
+   font-size: clamp(2rem, 6vw, 4rem);
+  letter-spacing: clamp(0.2rem, 1vw, 1rem);
+ }
 
   .container-lists {
     grid-template-columns: 1fr;
@@ -621,4 +352,708 @@ body:has(#mode-toggle:checked) {
     padding: 1rem;
   }
 }
+
+/* ============================
+   MOBILE FIRST BASE STYLES
+   ============================ */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(#2c346f, #0b034e);
+  color: #fff;
+  scroll-behavior: smooth;
 }
+
+/* Sections & Header (mobile) */
+section,
+header {
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+/* Overview section */
+.overview {
+  background: #2a0e4e;
+}
+
+/* Responsive heading */
+h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: clamp(0.2rem, 1vw, 1rem);
+}
+
+/* Paragraphs inside header */
+.header-p,
+.orange-headertext p {
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  letter-spacing: 2px;
+  margin: 0.3rem 0;
+}
+
+/* CTA Button */
+.cta-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgb(255, 106, 0);
+  color: white;
+  font-weight: bold;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.cta-btn:hover {
+  background: #512f77;
+}
+
+/* ============================
+   MOBILE FIRST BASE STYLES
+   ============================ */
+
+/* Overview section */
+.overview {
+  background: #2a0e4e;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+  padding: 4rem 1.5rem; /* mobile-friendly */
+  background: linear-gradient(135deg, #0b0f1a, #1a1f30);
+  background-size: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(6px);
+  z-index: 0;
+}
+
+/* Ensure hero content stays above animations */
+.blackhole-bg,
+.accretion-disk,
+.orbit-container,
+.hero h1,
+.hero p,
+.cta-btn {
+  position: relative;
+  z-index: 1;
+}
+
+/* HERO HEADING */
+.hero h1 {
+  background: linear-gradient(45deg, #ffd66e, #7873f5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  font-size: clamp(2rem, 7vw, 4rem);
+  letter-spacing: clamp(0.2rem, 1vw, 1rem);
+}
+
+/* Subheading text */
+.header-p,
+.orange-headertext p {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+}
+
+/* ============================
+   BLACK HOLE + DISKS (MOBILE)
+   ============================ */
+
+.blackhole-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #000 40%, transparent 70%);
+  animation: spin 6s linear infinite;
+  box-shadow: 0 0 30px rgba(168, 93, 251, 0.5);
+  filter: blur(2px);
+  z-index: 0;
+}
+
+.accretion-disk {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 260px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 10px solid transparent;
+  animation: spinDisk 12s linear infinite;
+  filter: blur(5px);
+  z-index: 1;
+}
+
+.orbit-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  animation: rotateDisk 10s linear infinite;
+  z-index: 0;
+}
+
+/* Inner orbit */
+.orbit-layer-1 {
+  width: 200px;
+  height: 200px;
+  animation: rotateFast 8s linear infinite;
+}
+
+/* Outer orbit */
+.orbit-layer-2 {
+  width: 260px;
+  height: 260px;
+  animation: rotateSlow 16s linear infinite;
+  z-index: -1;
+}
+
+
+/* ============================
+   MOBILE FIRST — PARTICLES
+   ============================ */
+
+/* Base particle style */
+.particle {
+  position: absolute;
+  width: 4px;          /* smaller for mobile */
+  height: 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px;
+  animation: flicker 2s infinite ease-in-out, pulse 3s infinite ease-in-out;
+}
+
+/* Hot glowing particles */
+.p1, .p2, .p3 {
+  background: #ff9900;
+  box-shadow: 0 0 8px #ff9900;
+}
+
+/* Positions (mobile) */
+.p1 { top: 12%; left: 50%; }
+.p2 { top: 55%; left: 8%; }
+.p3 { top: 88%; left: 60%; }
+
+/* Cooler particles */
+.p4, .p5, .p6 {
+  background: #5f99ff;
+  box-shadow: 0 0 8px #5f99ff;
+}
+
+.p4 { top: 18%; left: 70%; }
+.p5 { top: 62%; left: 22%; }
+.p6 { top: 92%; left: 50%; }
+
+/* ============================
+   PARTICLE ANIMATIONS
+   ============================ */
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  20% { opacity: 0.7; }
+  40% { opacity: 0.9; }
+  60% { opacity: 0.4; }
+  80% { opacity: 0.8; }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 6px;
+  }
+  50% {
+    transform: scale(1.3);
+    box-shadow: 0 0 12px;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px;
+  }
+}
+
+/* Rotation animations */
+@keyframes rotateFast {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateSlow {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes rotateDisk {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spinDisk {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ============================
+   TYPOGRAPHY (Mobile First)
+   ============================ */
+
+h1 {
+  font-size: clamp(2rem, 7vw, 4rem);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: clamp(0.2rem, 1vw, 1rem);
+}
+
+.orange-headertext {
+  color: rgb(255, 106, 0);
+}
+
+/* ============================
+   CTA BUTTON (Mobile First)
+   ============================ */
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgb(255, 106, 0);
+  color: white;
+  font-weight: bold;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.cta-btn:hover {
+  background: #512f77;
+}
+
+/* ============================
+   MOBILE FIRST — SCROLL ANIMATION
+   ============================ */
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   ACTIVITIES SECTION (Mobile First)
+   ============================ */
+
+.activities {
+  background: linear-gradient(135deg, #0b0f1a, #1a1f30);
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+}
+
+/* Grid becomes 1 column on mobile */
+.container-lists {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+/* Activity box */
+.box {
+  text-align: center;
+  padding: 1.25rem;
+  background-color: #2a0e4e;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.box img {
+  max-width: 70px;
+  margin-bottom: 1rem;
+}
+
+.p-style {
+  color: #a85dfb;
+}
+
+/* Register section */
+.register {
+  background: #2a0e4e;
+}
+
+.register-btn:hover {
+  background-color: #2a0e4e;
+  cursor: pointer;
+}
+
+/* ============================
+   GRADIENT TEXT
+   ============================ */
+
+.gradient-text {
+  background: linear-gradient(45deg, #ffd66e, #7873f5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ============================
+   ICONS
+   ============================ */
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: rgb(255, 106, 0);
+  background-color:#1a1f30;
+  padding: 1em;
+  border-radius: 5px;
+  }
+
+/* ============================
+   LIGHT MODE TOGGLE (Mobile First)
+   ============================ */
+
+.toggle-switch {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 55px;
+  height: 30px;
+  display: inline-block;
+  z-index: 999;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #512f77;
+  border-radius: 34px;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Checked state */
+.toggle-switch input:checked + .slider {
+  background-color: #ff6ec4;
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* ============================
+   MOBILE FIRST — SHIMMER EFFECT
+   ============================ */
+
+@keyframes shimmer {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+/* ============================
+   MOBILE FIRST — GRID SHOWCASE
+   ============================ */
+
+.grid-showcase {
+  display: grid;
+  grid-template-columns: 1fr; /* single column on mobile */
+  gap: 1.25rem;
+  padding: 1rem 0;
+}
+
+/* ============================
+   DARK MODE (Mobile First)
+   ============================ */
+
+body:has(#mode-toggle:checked) {
+  background: radial-gradient(#1a1a1a, #000000);
+  color: #eaeaea;
+}
+
+/* ============================
+   GALLERY SECTION (Mobile First)
+   ============================ */
+
+.gallery {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #0b0f1a, #1a1f30);
+  color: white;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+}
+
+
+
+
+  
+
+
+
+/* ============================
+   TABLET (min-width: 600px)
+   ============================ */
+@media (min-width: 600px) {
+
+  section,
+  header {
+    max-width: 90%;
+    margin: 3rem auto;
+    padding: 2rem;
+  }
+
+  h1 {
+    letter-spacing: 0.5rem;
+  }
+
+   .hero {
+    padding: 5rem 2rem;
+  }
+
+  .blackhole-bg {
+    width: 240px;
+    height: 240px;
+  }
+
+  .accretion-disk {
+    width: 320px;
+    height: 320px;
+  }
+
+  .orbit-container {
+    width: 650px;
+    height: 650px;
+  }
+
+  .orbit-layer-1 {
+    width: 240px;
+    height: 240px;
+  }
+
+  .orbit-layer-2 {
+    width: 320px;
+    height: 320px;
+  }
+
+  .particle {
+    width: 5px;
+    height: 5px;
+  }
+
+  /* Slightly adjust positions for better spacing */
+  .p1 { top: 10%; }
+  .p2 { top: 50%; }
+  .p3 { top: 85%; }
+
+  .p4 { top: 15%; }
+  .p5 { top: 60%; }
+  .p6 { top: 90%; }
+
+ .event-overview p {
+  font-size: 1.5rem;
+
+} 
+ .activities {
+    padding: 4rem 2rem;
+  }
+
+  .container-lists {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .box img {
+    max-width: 75px;
+  }
+
+  .icon {
+    width: 45px;
+    height: 45px;
+
+  }
+
+  .grid-showcase {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .gallery {
+    padding: 4rem 2rem;
+  }
+
+  .gallery h2 {
+    margin-bottom: 2rem;
+  }
+
+}
+
+
+
+/* ============================
+   DESKTOP (min-width: 900px)
+   ============================ */
+@media (min-width: 900px) {
+
+  section,
+  header {
+    max-width: 900px;
+    margin: 5rem auto;
+    padding: 2.5rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    letter-spacing: 1rem;
+  }
+
+    .hero {
+    padding: 6rem 2rem;
+  }
+
+  .blackhole-bg {
+    width: 300px;
+    height: 300px;
+  }
+
+  .accretion-disk {
+    width: 400px;
+    height: 400px;
+  }
+
+  .orbit-container {
+    width: 800px;
+    height: 800px;
+  }
+
+  .orbit-layer-1 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .orbit-layer-2 {
+    width: 360px;
+    height: 360px;
+  }
+
+  .particle {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Restore original desktop positions */
+  .p1 { top: 10%; left: 50%; }
+  .p2 { top: 50%; left: 5%; }
+  .p3 { top: 85%; left: 60%; }
+
+  .p4 { top: 15%; left: 70%; }
+  .p5 { top: 60%; left: 20%; }
+  .p6 { top: 90%; left: 50%; }
+
+   .activities {
+    padding: 5rem 2rem;
+  }
+
+  .container-lists {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .box img {
+    max-width: 80px;
+  }
+
+  .icons {
+    justify-content: space-around;
+    
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+    background-color:#1a1f30;
+    padding: 1em;
+    border-radius: 5px;
+  }
+
+  .grid-showcase {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .gallery {
+    padding: 5rem 2rem;
+  }
+}
+
+
