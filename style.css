@@ -317,41 +317,7 @@ body:has(#mode-toggle:checked) {
 }
 /* Responsive */
 
- @media (max-width: 768px) {
-  h1 {
-    letter-spacing: 0.2rem;
-  }
-
  
-
-  .container-lists {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero {
-    padding: 4rem 1.5rem;
-  }
-
-  .orbit-container {
-    width: 100vw;
-    height: 100vw;
-  }
-}
-
-@media (max-width: 480px) {
- .hero h1 {
-   font-size: clamp(2rem, 6vw, 4rem);
-  letter-spacing: clamp(0.2rem, 1vw, 1rem);
- }
-
-  .container-lists {
-    grid-template-columns: 1fr;
-  }
-
-  .box {
-    padding: 1rem;
-  }
-}
 
 /* ============================
    MOBILE FIRST BASE STYLES
@@ -417,6 +383,9 @@ h1 {
   background: #512f77;
 }
 
+
+
+
 /* ============================
    MOBILE FIRST BASE STYLES
    ============================ */
@@ -434,6 +403,7 @@ h1 {
   text-align: center;
   padding: 4rem 1.5rem; /* mobile-friendly */
   background: linear-gradient(135deg, #0b0f1a, #1a1f30);
+  /* background-image: url(./media/black-hole.jpg); */
   background-size: cover;
 }
 
@@ -505,6 +475,7 @@ h1 {
   border-radius: 50%;
   border: 10px solid transparent;
   animation: spinDisk 12s linear infinite;
+ 
   filter: blur(5px);
   z-index: 1;
 }
@@ -513,11 +484,12 @@ h1 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 500px;
-  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 200px;
+  transform: translate(-20%, -50%);
   animation: rotateDisk 10s linear infinite;
   z-index: 0;
+  /* background-color: transparent; */
 }
 
 /* Inner orbit */
@@ -535,10 +507,25 @@ h1 {
   z-index: -1;
 }
 
-
-/* ============================
-   MOBILE FIRST — PARTICLES
-   ============================ */
+.image-wrapper-event {
+  display: flex;
+  max-width: 50%;
+  height: 50%;
+  background:#1a1a1a;
+    padding: 0.5rem;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+}
+.image-event {
+  border-radius: 5px;
+ 
+  aspect-ratio: 6 / 3;
+    width: 100%;
+    object-fit: cover;
+}
 
 /* Base particle style */
 .particle {
@@ -649,7 +636,7 @@ h1 {
   padding: 0.75rem 1.5rem;
   background: rgb(255, 106, 0);
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   font-size: clamp(1rem, 4vw, 1.5rem);
   border-radius: 5px;
   text-decoration: none;
@@ -738,8 +725,18 @@ h1 {
   -webkit-background-clip: text;
   color: transparent;
   animation: shimmer 3s linear infinite;
+  font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
+.tm {
+  font-size: 0.8rem;
+  color:#704d9e;
+  text-align: center;
+}
 /* ============================
    ICONS
    ============================ */
@@ -747,7 +744,7 @@ h1 {
 .icons {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1em;
 }
 
 .icon {
@@ -1053,6 +1050,25 @@ body:has(#mode-toggle:checked) {
 
   .gallery {
     padding: 5rem 2rem;
+  }
+
+  .desktop-view {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 1em;
+    margin: 1rem;
+
+  }
+  .desktop-view-event {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 1em;
+  }
+
+  .event-overview {
+    text-align: left;
   }
 }
 
